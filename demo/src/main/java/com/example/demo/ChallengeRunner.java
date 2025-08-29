@@ -25,7 +25,6 @@ public class ChallengeRunner implements CommandLineRunner {
     private void generateWebhook() {
         String apiUrl = "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA";
 
-        // Your details are correctly filled in here
         WebhookRequest requestBody = new WebhookRequest(
                 "Nishit Ketan Patel",
                 "22BIT0529",
@@ -48,9 +47,6 @@ public class ChallengeRunner implements CommandLineRunner {
 
                     System.out.println("Successfully generated webhook!");
                     System.out.println("Webhook URL: " + webhookUrl);
-                    // System.out.println("Access Token: " + accessToken); // It's better not to print tokens
-
-                    // --- This is the new part that continues the process ---
                     solveAndSubmit(webhookUrl, accessToken, regNo);
                 }
             } else {
@@ -67,7 +63,7 @@ public class ChallengeRunner implements CommandLineRunner {
      * Determines the SQL query and calls the submission method.
      */
     private void solveAndSubmit(String webhookUrl, String accessToken, String regNo) {
-        // Your regNo '22BIT0529' ends in 29, which is ODD. So we use the query for Question 1.
+
         String finalSqlQuery = "SELECT\n" +
                 "    p.AMOUNT AS SALARY,\n" +
                 "    CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS NAME,\n" +

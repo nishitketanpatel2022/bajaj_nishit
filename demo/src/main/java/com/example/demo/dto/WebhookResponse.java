@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WebhookResponse {
 
-    // This annotation ensures it correctly maps the JSON key "webhookUrl"
-    // to this Java field, even if the naming is slightly different.
     @JsonProperty("webhook")
     private String webhookUrl; // Changed from webhookURL to webhookUrl (camelCase)
 
